@@ -43,10 +43,10 @@ public class EscapeRoom {
         return (int) result;
     }
     public static int codigo4() {
-        Query query =  session1.createQuery("SELECT (e) FROM AlumnoEntity e WHERE e.apellidos LIKE '%z%'");
+        Query query =  session1.createQuery("SELECT COUNT(e) FROM AlumnoEntity e WHERE e.apellidos LIKE '%z%'");
 
-        long result = (long) query.getResultList().get(0);
+        Long result = (Long) query.getResultList().get(0);
 
-        return (int) result ;
+        return  result.intValue();
     }
 }
